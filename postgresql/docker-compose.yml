@@ -1,0 +1,10 @@
+PosgreSQL:
+  image: "postgres:latest" 
+  ports:
+    - "5432:5432" 
+  expose:
+    - "5432" 
+  environment:
+    - "POSTGRES_USER=pgr" 
+    - "POSTGRES_PASSWORD=pgr" 
+    - "POSTGRES_DB=default" 
