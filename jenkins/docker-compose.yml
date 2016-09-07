@@ -1,0 +1,22 @@
+ersion: '2'
+services:
+  master-data:
+    restart: on-failure
+    image: "busybox:latest"
+    volumes:
+      - /var/lib/data/jenkins:/var/jenkins_home
+    entrypoint: tail -F /dev/null
+    dns:
+      - 8.8.8.8
+  master:
+    restart: on-failure
+    image: "jenkins:latest"
+    ports:
+      - "50000:50000"
+      - "8080:8080"
+    links:
+      - master-data
+    volumes_from:
+      - master-data
+    dns:
+      - 8.8.8.8
