@@ -15,6 +15,7 @@ Docker Compose projects.
 * MySQL (With_data_container).
 * PostgreSQL (No_data_container).
 * PostgreSQL (With_data_container).
+* Service Discovery.
 
 How to run Docker Compose projects.
 -----------------------------------
