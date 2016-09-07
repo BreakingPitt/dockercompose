@@ -1,0 +1,28 @@
+version: '2'
+services:
+  consul:
+    hostname: consul
+    restart: on-failure
+    image: "gliderlabs/consul-server"
+    dns:
+      - 8.8.8.8
+      - 192.168.1.14
+      - 192.168.1.15
+    ports:
+      - "8400:8400"
+      - "8500:8500"
+      - "192.168.1.126:53:8600/udp"
+    command: -advertise 192.168.1.126 -server -bootstrap -client=0.0.0.0
+  registrator:
+    hostname: registrator
+    restart: on-failure
+    image: "gliderlabs/registrator"
+    depends_on:
+      - consul
+    dns:
+      - 8.8.8.8
+      - 192.168.1.14
+      - 192.168.1.15
+    volumes:
+       - "/var/run/docker.sock:/tmp/docker.sock"
+    command: -internal consul://192.168.1.126:8500 -client 0.0.0.0
