@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/BreakingPitt/dockercompose.svg?branch=master)](https://travis-ci.org/BreakingPitt/dockercompose)
+[![Coverage Status](https://coveralls.io/repos/github/BreakingPitt/dockercompose/badge.svg?branch=master)](https://coveralls.io/github/BreakingPitt/dockercompose?branch=master)
+
 Docker Compose repository.
 ================================
 
