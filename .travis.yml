@@ -2,12 +2,10 @@ sudo: required
 language: generic
 services:
     - docker
-
 env:
     global:
         - DOCKER_VERSION=1.12.1-0~trusty
         - DOCKER_COMPOSE_VERSION=1.6.0
-
 script:
     - docker version
     - docker-compose version
